@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+  height: 100vh;
+}
+
+/* NAV */
+nav {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list {
+  height: min(10vh, 100px);
+  width: 50%;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  font-weight: bold;
+}
+
+.nav-links {
+  color: black;
+  font-size: 1.20rem;
+  text-decoration: none;
+}
+
+/* CONTAINER DE PÁGINAS */
+main {
+  overflow: hidden;
+}
+
+/* PÁGINAS */
+.pages {
+  height: 90vh;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  transform-origin: top center;
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-in-out;
+}
+
+.pages > * {
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+
+/* ANIMAÇÃO DAS PÁGINAS */
+.pages.active {
+  transform: translateX(0);
+}
+
+.pages.active > * {
+  opacity: 1;
+  transition-delay: 0.8s;
+}
+
+/* ANIMAÇÃO NO MOBILE */
+/*@media (max-width: 800px) {
+  .pages {
+    transform: translateX(-100%) rotate(90deg);
+  }
+  
+  .pages.active {
+    transform: translateX(0) rotate(0deg);
+  }
+}*/
+
+/* CONTEÚDO DAS PÁGINAS */
+.home-content,
+.about-content,
+.contact-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.home-content img,
+.about-content img,
+.contact-content img {
+  height: min(70%, 800px);
+}
+
+.home-presentation,
+.about-presentation,
+.contact-presentation {
+  width: min(90%, 800px);
+}
+
+.home-presentation h1,
+.about-presentation h1,
+.contact-presentation h1 {
+  font-size: 3rem;
+  margin: 30px 0;
+}
+
+.home-presentation p,
+.about-presentation p,
+.contact-presentation p {
+  font-size: 1.25rem;
+}
+
+/* BACKGROUND DE CADA SEÇAO */
+/*.home {
+  background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+}
+
+.about {
+  background-image: linear-gradient(
+    120deg,
+    #a1c4fd 0%,
+    #c2e9fb 100%);
+}
+
+.contact {
+  background-image: linear-gradient(
+    to right,
+    #4facfe 0%,
+    #00f2fe 100%);
+}*/
+
+@media (max-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+  
+  .home-content,
+  .about-content,
+  .contact-content {
+    flex-direction: column;
+  }
+  
+  .home-presentation,
+  .about-presentation,
+  .contact-presentation {
+    text-align: center;
+  }
+  
+  .home-content img,
+  .about-content img,
+  .contact-content img {
+    width: 80%;
+  }
+}
