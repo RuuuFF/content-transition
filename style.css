@@ -6,18 +6,26 @@
 
 body {
   font-family: sans-serif;
-  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+  background-color: #fafafa;
   height: 100vh;
 }
 
 /* NAV */
 nav {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #ff7979;
+  color: #fff;
+}
+
+nav .logo {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
 }
 
 .nav-list {
-  height: min(10vh, 100px);
-  width: 50%;
   margin-left: auto;
   display: flex;
   align-items: center;
@@ -27,22 +35,22 @@ nav {
 }
 
 .nav-links {
-  color: black;
+  color: inherit;
   font-size: 1.20rem;
+  padding: 0.5rem 1rem;
   text-decoration: none;
 }
 
 /* CONTAINER DE PÁGINAS */
 main {
+  height: 100%;
   overflow: hidden;
 }
 
 /* PÁGINAS */
 .pages {
-  height: 90vh;
   width: 100%;
   position: absolute;
-  overflow: hidden;
   transform-origin: top center;
   transform: translateX(-100%);
   transition: transform 0.8s ease-in-out;
@@ -79,21 +87,25 @@ main {
 .about-content,
 .contact-content {
   height: 100%;
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  flex-direction: column;
 }
 
 .home-content img,
 .about-content img,
 .contact-content img {
-  height: min(70%, 800px);
+  width: min(80%, 400px);
 }
 
 .home-presentation,
 .about-presentation,
 .contact-presentation {
   width: min(90%, 800px);
+  text-align: center;
 }
 
 .home-presentation h1,
@@ -107,6 +119,7 @@ main {
 .about-presentation p,
 .contact-presentation p {
   font-size: 1.25rem;
+  margin-bottom: 30px;
 }
 
 /* BACKGROUND DE CADA SEÇAO */
@@ -133,21 +146,11 @@ main {
     font-size: 87.5%;
   }
   
-  .home-content,
-  .about-content,
-  .contact-content {
-    flex-direction: column;
+  nav {
+    padding: 10px;
   }
   
-  .home-presentation,
-  .about-presentation,
-  .contact-presentation {
-    text-align: center;
-  }
-  
-  .home-content img,
-  .about-content img,
-  .contact-content img {
-    width: 80%;
+  .nav-links {
+    padding: 0.5rem 0.5rem;
   }
 }
